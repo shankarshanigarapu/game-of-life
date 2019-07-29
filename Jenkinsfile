@@ -17,7 +17,7 @@ pipeline {
             steps  {
                      sh 'mvn package'
                    }
-	     
+     }
 	      stage('terraform') {
             environment {
                 LAYER = "${params.env}"
