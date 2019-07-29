@@ -48,6 +48,15 @@ variable "parameter_group_name" {
   description="parameter_group_name"
 }
 
+#AUTO SCALING GROUP PARAMETERS
+
+variable "name_prefix" {
+description ="name of launch configuration"
+}
+
+variable "image_id" {
+  description ="ami to attach autoscaling group"
+}
 
 
 

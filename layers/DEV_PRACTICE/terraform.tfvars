@@ -15,3 +15,6 @@ name                 = "practicedb"
 username             = "root"
 password             = "password"
 parameter_group_name = "default.mysql5.7"
+#AUTOSCALING GROUP PARAMETERS
+name_prefix      =  "terraform_asg_launch"
+image_id         =  "ami-07d0cf3af28718ef8"
