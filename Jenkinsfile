@@ -34,13 +34,7 @@ pipeline {
 		
         }
 	    
-	stage('Deploy') {
-    steps{
-sh "cd /var/lib/jenkins/workspace/pipeline_terraform && ./ec2.py --list --profile default --refresh-cache"
-sh "ansible -i ec2.py -u ubuntu tag_Name_terraformmachine -m ping "
-sh "ansible-playbook -i ec2.py -u ubuntu   tomcat.yml"
-}
-}    
+ 
 	    
 	    
 	     
