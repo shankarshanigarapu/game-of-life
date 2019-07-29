@@ -31,7 +31,7 @@ plan-destroy: validate
 	cd layers/$(LAYER) && \
 	terraform plan -var "aws_accesskey=$aws_accesskey" -var "aws_secretkey=$aws_secretkey" -destroy 
 
-destroy: init
+destroy: 
 	@echo "running terraform destroy"
 	cd layers/$(LAYER) && \
-	terraform destroy "aws_accesskey=$aws_accesskey" -var "aws_secretkey=$aws_secretkey" -auto-approve 
+        terraform destroy -var "aws_accesskey=$aws_accesskey" -var "aws_secretkey=$aws_secretkey" -auto-approve 
