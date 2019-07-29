@@ -1,4 +1,4 @@
-- hosts: tag_Name_terraformmachine
+- hosts: tag_Name_DEV_PRACTICE
   become: yes
   tasks:
   - name: updating packges and install tomcat
