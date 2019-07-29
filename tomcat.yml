@@ -1,4 +1,4 @@
-- hosts: tag_Env_DEV_PRACTICE
+- hosts: tag_Name_terraforminstance
   become: yes
   tasks:
   - name: updating packges and install tomcat
