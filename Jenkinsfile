@@ -15,7 +15,7 @@ pipeline {
                  }
      stage('build'){
             steps  {
-                     sh 'mvn package'
+                     bat 'mvn package'
                    }
         stage('Run Terraform') {
             environment {
