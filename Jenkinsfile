@@ -1,6 +1,9 @@
 
 pipeline {
     agent any
+	 environment {
+        AWS_ROLE = "Terraformrole"
+    }
    
     parameters {
         choice(name: 'env', choices: 'DEV_PRACTICE\nTEST_PRACTICE', description: 'Select Environment')
@@ -27,18 +30,14 @@ pipeline {
 		 steps {
 
                 script {
+                    sh 'chmod +x infra.sh'
                     if (params.env == 'DEV_PRACTICE')
-                        sh "make $INFRA_ACTION"
+                        sh 'AWS_ACCOUNT_ID=407449588770 ./infra.sh'
                 }
             }
 		
         }
-	 stage('Deploy') {
-    steps{
-sh "cd /var/lib/jenkins/workspace/pipeline_terraform && ./ec2.py --list --profile default --refresh-cache"
-sh "ansible -i ec2.py -u ubuntu tag_Name_DEV_PRACTICE -m ping "
-sh "ansible-playbook -i ec2.py -u ubuntu   tomcat.yml"
-}
+
 }  
  
 	    
