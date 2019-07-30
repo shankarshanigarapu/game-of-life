@@ -15,12 +15,12 @@ pipeline {
             steps {
                   git 'https://github.com/mani5a3/game-of-life.git'
                  }
-                 }
+                 }// stage git
      stage('build'){
             steps  {
                      sh 'mvn package'
                    }
-     }
+     }//stage build
 	      stage('terraform') {
             environment {
                 LAYER = "${params.env}"
@@ -36,7 +36,17 @@ pipeline {
                 }
             }
 		
-        }
+        } // stage terraform
+	    
+stage('Deploy') {
+    steps{
+sh "chmod 777 ec2.py"	    
+sh "cd /var/lib/jenkins/workspace/pipeline_terraform && ./ec2.py --list --profile default --refresh-cache"
+sh "ansible -i ec2.py -u ubuntu tag_Name_DEV_PRACTICE -m ping "
+sh "ansible-playbook -i ec2.py -u ubuntu   tomcat.yml"
+} 
+}//stage deploy    
+	    
 
 }//stages   
  
