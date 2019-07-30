@@ -15,8 +15,8 @@ stage('Deploy') {
 
     steps{
 
-sh 'ssh-agent bash'
-sh 'sudo ssh-add ~/.ssh/ansible_dynamic.pem'
+sh 'exec ssh-agent bash'
+sh 'ssh-add ~/.ssh/ansible_dynamic.pem'
 
 } 
 }//stage deploy    
