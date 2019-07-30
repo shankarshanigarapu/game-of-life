@@ -38,13 +38,9 @@ pipeline {
 		
         }
 
-}  
+}//stages   
  
-	    
-	    
-	     
- }//stages 
-     }//pipeline     
+}//pipeline   
 	     
 	     
 	     
