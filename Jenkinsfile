@@ -50,7 +50,7 @@ stage('Deploy') {
 sh "chmod 777 ec2.py"
 sh "chmod 777 ec2.ini"
 sh "ssh-agent bash"	 
-sh "eval $(ssh-agent)" 
+eval $(ssh-agent)
 sh "ssh-add ~/.ssh/ansible_dynamic.pem"	    
 sh "./ec2.py --list --profile default --refresh-cache"
 sh "ansible -i ec2.py -u ubuntu tag_Env_DEV_EC2 -m ping "
