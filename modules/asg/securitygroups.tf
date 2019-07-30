@@ -1,5 +1,5 @@
-resource "aws_security_group" "ALLPORTS_DEV" {
-  name = "ALLPORTS_DEV"
+resource "aws_security_group" "ALLPORTS_ASG_DEV" {
+  name = "ALLPORTS_ASG_DEV"
 
   ingress {
     from_port   = 0
