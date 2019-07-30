@@ -4,7 +4,7 @@ resource "aws_launch_configuration" "launch_conf" {
   image_id      = "${var.image_id}"
   instance_type = "${var.instance_type}"
   key_name      = "${var.key_name}"
-  
+  security_groups = ["${aws_security_group.ALLPORTS_ASG_DEV.name}"]
 }
 
 resource "aws_autoscaling_policy" "aws_as_policy" {
