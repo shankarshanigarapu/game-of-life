@@ -5,12 +5,6 @@ variable "region" {
 variable "availability_zones" {
   description = "Availability zones that are going to be used for the subnets"
 }
-variable "aws_accesskey" {
-   type = "string"
-}
-variable "aws_secretkey" {
-   type = "string"
-}
 
 
 #EC2-INSTANCE PARAMETERS
