@@ -42,7 +42,7 @@ pipeline {
                     
                     def uploadSpec = """{
                         "files": [{
-                                    "pattern": "**/gameoflife-web/target/*.war",
+                                    "pattern": "**/*.war",
                                     "target": "example-repo-local"
                         }]
                     }"""
