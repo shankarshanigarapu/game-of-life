@@ -20,7 +20,20 @@ pipeline {
             steps  {
                      sh 'mvn package'
                    }
+	     
      }//stage build
+	    
+	 stage('SonarQube analysis'){
+       steps {
+
+          withSonarQubeEnv('sonarqube') {
+  
+             sh "/home/softwares/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
+               }
+             }
+          }  //stage SonarQube analysis 
+	    
+	    
 	      stage('terraform') {
             environment {
                 LAYER = "${params.env}"
