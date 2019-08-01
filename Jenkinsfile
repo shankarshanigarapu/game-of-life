@@ -11,11 +11,21 @@ pipeline {
 	
     stages {
 	 stage('git') {
+		 	when {
+    expression { 
+        params.action == 'apply'
+        
+    }
             steps {
                   git 'https://github.com/mani5a3/game-of-life.git'
                  }
                  }// stage git
      stage('build'){
+	       expression { 
+        params.action == 'apply'
+        
+    }
+	     
             steps  {
                      sh 'mvn package'
                    }
@@ -23,8 +33,11 @@ pipeline {
      }//stage build
 	    
 	 stage('SonarQube analysis'){
+		  expression { 
+        params.action == 'apply'
+    }
        steps {
-
+	     
           withSonarQubeEnv('sonarqube') {
   
              sh "/home/softwares/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
@@ -33,6 +46,10 @@ pipeline {
           }  //stage SonarQube analysis 
 	    
 		    stage('jfrog'){
+			     expression { 
+        params.action == 'apply'
+        
+              }
             
             steps{
                 script{
