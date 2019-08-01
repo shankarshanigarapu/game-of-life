@@ -37,7 +37,7 @@ pipeline {
             
             steps{
                 script{
-                    def SERVER_ID = 'Artifactory'
+                    def SERVER_ID = 'artifactory'
                     def server = Artifactory.server SERVER_ID
                     
                     def uploadSpec = """{
