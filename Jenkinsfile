@@ -76,7 +76,7 @@ pipeline {
             }
         }//stage jfrog
 	    
-	      stage('terraform') {
+	      stage('IAC') {
             environment {
                 LAYER = "${params.env}"
                 INFRA_ACTION = "${params.action}"
