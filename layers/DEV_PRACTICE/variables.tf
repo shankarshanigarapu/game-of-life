@@ -52,6 +52,17 @@ variable "image_id" {
   description ="ami to attach autoscaling group"
 }
 
+# APPLICATION LOAD BALANCER PARAMETERS
+variable "subnets" {
+  description= "list of subnets"
+}
+variable "certificate_arn" {
+  default="https self signed certificate arn"
+}
+
+variable "ssl_policy" {
+  description="ssl policy"
+}
 
 
 
