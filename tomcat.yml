@@ -1,4 +1,4 @@
-- hosts: tag_Env_DEV_EC2
+- hosts: all
   become: yes
   tasks:
   - name: updating packges and install tomcat
