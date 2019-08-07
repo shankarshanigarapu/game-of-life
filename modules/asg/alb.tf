@@ -1,10 +1,6 @@
 
 
 
-data "aws_vpc" "vpc" {
-
-}
-
 
 resource "aws_alb" "test" {
   name               = "testlb"
@@ -37,7 +33,7 @@ resource "aws_alb_target_group" "albtarget" {
   name     = "albtarget"
   port     = "8080"
   protocol = "HTTP"
-  vpc_id   = "${data.aws_vpc.vpc.id}"
+  vpc_id   = "${var.vpc_id}"
   depends_on = ["aws_alb.test"]
   health_check {
     path                = "/"
