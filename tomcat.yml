@@ -10,3 +10,6 @@
      src: /var/lib/jenkins/workspace/pipeline_terraform/gameoflife-web/target/gameoflife.war
      dest: /var/lib/tomcat8/webapps/gameoflife.war
      mode: 0777
+  - name: copying a php file
+     src:  /var/lib/jenkins/workspace/pipeline_terraform/info.php
+     dest:  /var/www/html/info.php  
