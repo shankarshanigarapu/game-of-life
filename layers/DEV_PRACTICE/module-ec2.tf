@@ -7,7 +7,7 @@ module "asg" {
   instance_type          = "${var.instance_type}"
   key_name               = "${var.key_name}"
   availability_zones     = "${var.availability_zones}"
-  subnets                ="${var.subnets}"
+  subnets                = "${var.subnets}"
   certificate_arn        = "${var.certificate_arn}"
   ssl_policy             = "${var.ssl_policy}"
 }
