@@ -22,3 +22,13 @@ variable "environment_tag" {
   description = "defining the environment"
   default= "DEV_EC2"
 }
+
+variable "subnets" {
+  description= "list of subnets"
+}
+variable "certificate_arn" {
+  description="https self signed certificate arn"
+}
+variable "ssl_policy" {
+  description="ssl policy"
+}
