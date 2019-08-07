@@ -1,7 +1,7 @@
 
 
-module "asg_and_alb" {
-  source = "../../modules/asg_and_alb"
+module "asg" {
+  source = "../../modules/asg"
   name_prefix            = "${var.name_prefix}"
   image_id               = "${var.image_id}"
   instance_type          = "${var.instance_type}"
