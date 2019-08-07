@@ -35,7 +35,7 @@ resource "aws_alb_listener" "front_end" {
 
 resource "aws_alb_target_group" "albtarget" {
   name     = "albtarget"
-  port     = "80"
+  port     = "8080"
   protocol = "HTTP"
   vpc_id   = "${data.aws_vpc.vpc.id}"
   depends_on = ["aws_alb.test"]
