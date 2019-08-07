@@ -32,7 +32,6 @@ variable "certificate_arn" {
 variable "ssl_policy" {
   description="ssl policy"
 }
-variable "vpc_id"
-{
+variable "vpc_id" {
    default= "vpc-ac35a8d6"
-   }
+}
