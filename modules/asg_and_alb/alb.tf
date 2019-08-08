@@ -64,7 +64,7 @@ resource "aws_alb_target_group" "albtarget1" {
   name     = "albtarget1"
   port     = "80"
   protocol = "HTTP"
-  vpc_id   = "${data.aws_vpc.vpc.id}"
+  vpc_id   = "${var.vpc_id}"
   depends_on = ["aws_alb.test"]
   health_check {
     path                = "/info.php"
