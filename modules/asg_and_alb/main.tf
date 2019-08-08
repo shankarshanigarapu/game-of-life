@@ -32,7 +32,7 @@ resource "aws_autoscaling_group" "asg" {
   min_size             = 2
   max_size             = 3
   availability_zones   =["${var.availability_zones}"]
-  target_group_arns       = ["${aws_alb_target_group.albtarget.arn}"]
+  target_group_arns       = ["${aws_alb_target_group.albtarget.arn}","${aws_alb_target_group.albtarget1.arn}"]
   depends_on           =["aws_launch_configuration.launch_conf","aws_alb.test"]
   tags = [{
        key                 = "Env"
