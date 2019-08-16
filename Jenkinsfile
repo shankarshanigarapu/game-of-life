@@ -87,7 +87,7 @@ pipeline {
                 script {
                     sh 'chmod +x infra.sh'
                     if (params.env == 'DEV_PRACTICE')
-                        sh 'AWS_ACCOUNT_ID=407449588770 ./infra.sh'
+                        sh 'AWS_ACCOUNT_ID=21313213 ./infra.sh'
                 }
             }
 		
