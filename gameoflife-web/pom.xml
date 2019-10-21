@@ -28,7 +28,7 @@
                        <plugin> 
 <groupId>com.wakaleo.gameoflife</groupId>
  <artifactId>gameoflife-web</artifactId>
- <version>{project.version}</version> 
+ <version>1.0-SNAPSHOT</version> 
  <executions>
  <execution> 
  <id>update-pom-versions</id>
