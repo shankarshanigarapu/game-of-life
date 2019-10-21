@@ -25,6 +25,36 @@
             </resource>
         </resources>
         <plugins>
+                       <plugin> 
+<groupId>com.wakaleo.gameoflife</groupId>
+ <artifactId>gameoflife-web</artifactId>
+ <version>{project.version}</version> 
+ <executions>
+ <execution> 
+ <id>update-pom-versions</id>
+ <goals>
+ <goal>increment</goal> 
+ <goal>commit</goal> 
+ </goals> 
+ <phase>package</phase>
+ <configuration>
+ <autoIncrementVersion>true</autoIncrementVersion> 
+ </configuration> 
+ </execution> 
+ </executions>
+ </plugin> 
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
           <plugin>
               <groupId>org.eclipse.jetty</groupId>
               <artifactId>jetty-maven-plugin</artifactId>
