@@ -11,6 +11,11 @@
     <packaging>war</packaging>
     <name>gameoflife-web</name>
 
+  <modules>
+    <module>autoincrement</module>
+    <module>autoincrement-maven-plugin</module>
+  </modules>
+    
     <properties>
         <jetty.port>9090</jetty.port>
         <jetty.stop.port>9999</jetty.stop.port>
@@ -25,17 +30,7 @@
             </resource>
         </resources>
         <plugins>
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+    
             
           <plugin>
               <groupId>org.eclipse.jetty</groupId>
