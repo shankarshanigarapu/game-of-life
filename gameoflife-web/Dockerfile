@@ -1,8 +1,5 @@
-FROM tomcat:8-jre8
-
-RUN rm -rf /usr/local/tomcat/webapps/*
-
-COPY target/gameoflife.war /usr/local/tomcat/webapps/ROOT.war
-
-EXPOSE 8080
-CMD ["catalina.sh", "run"]
+FROM tomcat
+MAINTAINER mani
+RUN mv webapps webapps2 && mv webapps.dist/ webapps
+COPY target/gameoflife.war /usr/local/tomcat/webapps/gameoflife.war
+CMD ["catalina.sh","run"]
